@@ -30,8 +30,8 @@
 // - TARGET prometheus:http:localhost:9090:192.168.178.32:Gi0/1:ifHCInOctets
 
 
-// Extended to allow free-text Prometheus queries. This allows polling any Prometheus metric or
-// use complex quueries.
+// Extended to allow free-text Prometheus queries. This allows polling any Prometheus metric and
+// use of complex queries in targets.
 
 // In this case TARGET will look like:
 // prometheus:proto:remote_host:remote_port:free_text_query_in:free_text_query_out
