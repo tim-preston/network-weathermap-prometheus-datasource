@@ -39,7 +39,7 @@
 // prometheus:proto:remote_host:remote_port:free_text_query_in
 
 // This exmple shows how powerful this can be. It uses the max() with regex matching to poll the busiest 
-// link in a bundle on a given routyer, identified here by having 'ae232' in the interface descriotion 
+// link in a bundle on a given router, identified here by having 'ae232' in the interface description 
 // (which in this case show up as ifAlias).
 // - TARGET prometheus:http:localhost:9090:max(irate(ifHCOutOctets{ifAlias=~".*ae232.*",instance="192.168.178.32"}[10m]))*8:max(irate(ifHCInOctets{ifAlias=~".*ae232.*",instance="192.168.178.32"}[10m]))*8
 
@@ -123,8 +123,8 @@ class WeatherMapDataSource_prometheus extends WeatherMapDataSource {
     
             $url = $proto . '://' . $remote_host . ':' . $remote_port . '/api/v1/query?query=';
     
-            $in_query  = 'irate(' . $in_series  . '{ifName="' . $intf . '",instance="' . $instance . '"}[10m])*8';
-            $out_query = 'irate(' . $out_series . '{ifName="' . $intf . '",instance="' . $instance . '"}[10m])*8';
+            $in_query  = 'irate(' . $in_series  . '{ifName="' . $intf . '",instance="' . $instance . '"}[2m])*8';
+            $out_query = 'irate(' . $out_series . '{ifName="' . $intf . '",instance="' . $instance . '"}[2m])*8';
     
             // IN
             $query = urlencode($in_query);
@@ -148,7 +148,7 @@ class WeatherMapDataSource_prometheus extends WeatherMapDataSource {
     
             $url = $proto . '://' . $remote_host . ':' . $remote_port . '/api/v1/query?query=';
     
-            $in_query = 'irate(' . $in_series . '{ifName="' . $intf . '",instance="' . $instance . '"}[10m])*8';
+            $in_query = 'irate(' . $in_series . '{ifName="' . $intf . '",instance="' . $instance . '"}[2m])*8';
     
             $query = urlencode($in_query);
             $call = $url . $query;
