@@ -11,8 +11,8 @@
 
 
 //$prom_query = 'prometheus:http:localhost:9090:192.168.178.32:Gi0/13:ifHCInOctets:ifHCOutOctets';
-//$prom_query = 'prometheus:http:localhost:9090:sum(irate(ifHCOutOctets{ifAlias=~".*ae232.*",instance="192.168.178.32"}[10m]))*8:sum(irate(ifHCInOctets{ifAlias=~".*ae232.*",instance="192.168.178.32"}[10m]))*8';
-//$prom_query = 'prometheus:http:localhost:9090:max(irate(ifHCOutOctets{ifAlias=~".*ae232.*",instance="192.168.178.32"}[10m]))*8:max(irate(ifHCInOctets{ifAlias=~".*ae232.*",instance="192.168.178.32"}[10m]))*8';
+//$prom_query = 'prometheus:http:localhost:9090:sum(irate(ifHCInOctets{ifAlias=~".*ae232.*",instance="192.168.178.32"}[10m]))*8:sum(irate(ifHCOutOctets{ifAlias=~".*ae232.*",instance="192.168.178.32"}[10m]))*8';
+//$prom_query = 'prometheus:http:localhost:9090:max(irate(ifHCInOctets{ifAlias=~".*ae232.*",instance="192.168.178.32"}[10m]))*8:max(irate(ifHCOutOctets{ifAlias=~".*ae232.*",instance="192.168.178.32"}[10m]))*8';
 $prom_query = 'prometheus:http:localhost:9090:192.168.178.32:Gi0/13:ifHCInOctets:ifHCOutOctets';
 
 
