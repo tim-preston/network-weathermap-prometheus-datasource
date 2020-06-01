@@ -147,9 +147,9 @@ Modifed to use single query that gets the maximium of both In & Out throughput:
 ```
 LINK NODE1-NODE2
     NODES NODE1 NODE2
-    TARGET max(irate(ifHCOutOctets{ifAlias=~".*ae232.*",instance="192.168.178.32"}[10m]) or irate(ifHCOutOctets{ifAlias=~".*ae232.*",instance="192.168.178.32"}[10m]))*8
+    TARGET prometheus:http:localhost:9090:max(irate(ifHCOutOctets{ifAlias=~".*ae232.*",instance="192.168.178.32"}[10m]) or irate(ifHCOutOctets{ifAlias=~".*ae232.*",instance="192.168.178.32"}[10m]))*8
 ```
-These free-text PromQL queries can be very powerful.
+These free-text PromQL queries can be very powerful. However, they can be slow and expensive for your prometheus server to answer if they are too complex. So care should be taken when writing them so as not to overload your prometheus server.
 
 
 ## Generate your graph
